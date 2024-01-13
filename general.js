@@ -270,19 +270,19 @@ var MyBB = {
 				return;
 			}
 
-			MyBB.whoPostedSort = sortby;
+MyBB.whoPostedSort = sortby;
 
-			$.get(rootpath + url, function(html)
-			{
-				// just replace the inner div
-				body = $(html).children("div");
-				$("div.modal").children("div").replaceWith(body);
-			});
-			return;
-		}
-		MyBB.whoPostedSort = "";
-		MyBB.popupWindow(url);
-	},
+$.get(encodeURI(rootpath + url), function(html)
+{
+	
+	body = $(html).children("div");
+	$("div.modal").children("div").replaceWith(body);
+});
+return;
+}
+MyBB.whoPostedSort = "";
+MyBB.popupWindow(url);
+},
 
 	markForumRead: function(event)
 	{
